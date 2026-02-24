@@ -1,0 +1,50 @@
+server:
+  port: 8081
+  mode: "debug" # debug | release | test
+
+auth:
+  api_keys: []
+
+email:
+  provider: "resend"
+  api_key: ""
+  from_address: ""
+  from_name: ""
+
+cors:
+  allowed_origins:
+    - "http://localhost:3000"
+  allowed_methods:
+    - "GET"
+    - "POST"
+    - "OPTIONS"
+  allowed_headers:
+    - "X-API-Key"
+    - "Content-Type"
+    - "X-Request-ID"
+
+rate_limit:
+  requests_per_second: 10
+  burst: 20
+
+redis:
+  address: "localhost:6379"
+  password: ""
+  db: 0
+
+supabase:
+  url: ""
+  service_key: ""
+
+queue:
+  concurrency: 10
+  max_retry: 5
+  retry_delay_sec: 30
+
+recipient_rate_limit:
+  max_per_hour: 3
+
+reaper:
+  interval_sec: 300          # 5 minutes
+  stale_threshold_sec: 600   # 10 minutes
+  batch_size: 50
